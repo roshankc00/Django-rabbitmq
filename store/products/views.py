@@ -42,3 +42,9 @@ class ProductView(APIView):
         else:
             return Response({'message':"Id field is required"},status=status.HTTP_400_BAD_REQUEST)     
         
+
+
+def getProductById(pk):
+    stu=Product.objects.get(id=pk)
+    serializer=ProductSerializer(stu)
+    return serializer.data

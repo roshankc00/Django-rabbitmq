@@ -16,5 +16,7 @@ def callback(channel,method,properties,body):
 channel.basic_consume(queue='admin',on_message_callback=callback,auto_ack=True)
 
 
-print("hahah statred")
+print("Event pattern listener  listening")
 channel.start_consuming()
+
+
